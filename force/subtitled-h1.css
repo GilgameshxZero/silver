@@ -1,0 +1,22 @@
+h1 {
+	margin-bottom: calc(
+		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * -0.1
+	);
+	padding-bottom: 0;
+
+	border: none;
+}
+
+h1 + p {
+	--paragraph-indent: 0ch;
+
+	margin-bottom: calc(
+		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * 0.7
+	);
+	padding-bottom: calc(
+		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * 0.4
+	);
+
+	border-bottom: 0.1em solid var(--border-color);
+	text-indent: var(--paragraph-indent);
+}
