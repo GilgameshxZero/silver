@@ -1,8 +1,8 @@
 /* Shared CSS page for general VSCode-generated Markdown HTML. Forms a complete package without need for any additional CSS or JS. */
-@import "silver.fonts.css";
-@import "silver.katex.css";
-@import "silver.markdown.css";
-@import "silver.vscode.css";
+@import "fonts.css";
+@import "katex.css";
+@import "markdown.css";
+@import "vscode.css";
 
 /* Variables to be redefined for custom styling. */
 :root,
