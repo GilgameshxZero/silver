@@ -57,7 +57,7 @@ body {
 	padding: 2em max(2em, 50% - 40ch);
 	overflow-x: hidden;
 
-	font-family: "EB Garamond", Georgia, serif;
+	font-family: "EB Garamond", KaiTi, Georgia, serif;
 	font-size: 1.2em;
 	line-height: var(--line-height);
 	color: var(--foreground-color);
