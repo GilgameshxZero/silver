@@ -16,36 +16,34 @@
 	text-align: right;
 }
 
-/* Markdown font options. */
-.serif,
-.garamond {
-	font-family: "EB Garamond", KaiTi, Georgia, serif;
+/* Markdown font options. Primary font must be defined in `silver` `fonts.css`. Secondary fonts may be utilized to cover more obscure code points. */
+.fangsong,
+.kaiti {
+	font-family: KaiTi, "Latin Modern Roman 10", "EB Garamond", fangsong;
 }
 
-.sans-serif {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+.serif,
+.latin-modern-roman-10 {
+	font-family: "Latin Modern Roman 10", "EB Garamond", KaiTi, serif;
+}
+
+.eb-garamond {
+	font-family: "EB Garamond", KaiTi, serif;
+}
+
+.sans-serif,
+.roboto {
+	font-family: Roboto, KaiTi, sans-serif;
 }
 
 .monospace,
 .consolas {
-	font-family: Consolas, monospace;
-	font-size: 0.9em;
+	font-family: Consolas, KaiTi, monospace;
 }
 
-.script,
+.cursive,
 .tangerine {
-	font-family: Tangerine;
-	font-size: 1.3em;
-}
-
-.times-new-roman {
-	font-family: "Times New Roman", Times, serif;
-}
-
-.courier-new {
-	font-family: "Courier New", Courier, monospace;
-	font-size: 0.9em;
+	font-family: Tangerine, KaiTi, cursive;
 }
 
 /* Markdown element styles. */
@@ -87,8 +85,8 @@ pre {
 
 code {
 	white-space: pre-wrap;
-	font-family: Consolas, monospace;
-	font-size: 0.8em;
+	font-family: Consolas, KaiTi, monospace;
+	font-size: 0.9em;
 	text-indent: 0;
 	font-weight: 300;
 	line-height: inherit;
@@ -533,7 +531,7 @@ ul li::marker {
 
 /* Additional katex options not specified in VSCode. */
 .katex {
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 /* TODO: Why is this needed? */
