@@ -3,6 +3,9 @@
 /* https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css */
 /* Some colors are custom-defined and overwritten. */
 body[data-vscode-theme-name] {
+	/* Resets the 1.2em scaling on `silver.css`. */
+	font-size: 1em;
+
 	--foreground-color: var(--vscode-editor-foreground);
 	--background-color: var(--vscode-editor-background);
 	--textlink-foreground-color: var(--vscode-textLink-foreground);
