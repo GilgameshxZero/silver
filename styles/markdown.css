@@ -468,6 +468,10 @@ summary::-webkit-details-marker {
 	color: var(--list-marker-color);
 }
 
+summary>p {
+	display: inline;
+}
+
 aside {
 	width: calc(
 		50% - 0.5em -
