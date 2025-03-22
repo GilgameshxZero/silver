@@ -1,0 +1,513 @@
+/* Theming-related adaptive styling. */
+
+/* Variables to be redefined for custom styling. More in `silver.css`. */
+:root,
+:host {
+	/* Traditionally shared variables between light/dark mode. */
+	--blockquote-background-color: rgba(127, 127, 127, 0.1);
+	--blockquote-border-color: rgba(0, 122, 204, 0.5);
+	--list-marker-color: rgb(0, 122, 204);
+}
+
+/* Traditionally light/dark mode-dependent variables. Derived from in-preview colors. Overridden when in VSCode web preview. Derived from `vscode.css` selections, with care. */
+@media (prefers-color-scheme: light) {
+	:root,
+	:host {
+		--foreground-color: rgb(0, 0, 0);
+		--background-color: rgb(255, 255, 255);
+		--textlink-foreground-color: rgb(0, 106, 177);
+		--pre-background-color: rgba(220, 220, 220, 0.4);
+		--border-color: rgba(0, 0, 0, 0.18);
+		--code-color: rgb(163, 21, 21);
+	}
+
+	.hljs-function,
+	.hljs-params,
+	.hljs-number,
+	.hljs-class {
+		color: inherit;
+	}
+
+	.hljs-comment,
+	.hljs-quote,
+	.hljs-number,
+	.hljs-class,
+	.hljs-variable {
+		color: #008000;
+	}
+
+	.hljs-keyword,
+	.hljs-selector-tag,
+	.hljs-name,
+	.hljs-tag {
+		color: #00f;
+	}
+
+	.hljs-built_in,
+	.hljs-builtin-name {
+		color: #007acc;
+	}
+
+	.hljs-string,
+	.hljs-section,
+	.hljs-attribute,
+	.hljs-literal,
+	.hljs-template-tag,
+	.hljs-template-variable,
+	.hljs-type {
+		color: #a31515;
+	}
+
+	.hljs-subst,
+	.hljs-selector-attr,
+	.hljs-selector-pseudo,
+	.hljs-meta,
+	.hljs-meta-keyword {
+		color: #2b91af;
+	}
+	.hljs-title,
+	.hljs-doctag {
+		color: #808080;
+	}
+
+	.hljs-attr {
+		color: #f00;
+	}
+
+	.hljs-symbol,
+	.hljs-bullet,
+	.hljs-link {
+		color: #00b0e8;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root,
+	:host {
+		--foreground-color: rgb(212, 212, 212);
+		--background-color: rgb(30, 30, 30);
+		--textlink-foreground-color: rgb(55, 148, 255);
+		--pre-background-color: rgba(10, 10, 10, 0.4);
+		--border-color: rgba(255, 255, 255, 0.18);
+		--code-color: rgb(215, 186, 125);
+	}
+
+	.hljs-keyword,
+	.hljs-literal,
+	.hljs-symbol,
+	.hljs-name {
+		color: #569cd6;
+	}
+	.hljs-link {
+		color: #569cd6;
+		text-decoration: underline;
+	}
+
+	.hljs-built_in,
+	.hljs-type {
+		color: #4ec9b0;
+	}
+
+	.hljs-number,
+	.hljs-class {
+		color: #b8d7a3;
+	}
+
+	.hljs-string,
+	.hljs-meta-string {
+		color: #d69d85;
+	}
+
+	.hljs-regexp,
+	.hljs-template-tag {
+		color: #9a5334;
+	}
+
+	.hljs-subst,
+	.hljs-function,
+	.hljs-title,
+	.hljs-params,
+	.hljs-formula {
+		color: #dcdcdc;
+	}
+
+	.hljs-comment,
+	.hljs-quote {
+		color: #57a64a;
+		font-style: italic;
+	}
+
+	.hljs-doctag {
+		color: #608b4e;
+	}
+
+	.hljs-meta,
+	.hljs-meta-keyword,
+	.hljs-tag {
+		color: #9b9b9b;
+	}
+
+	.hljs-variable,
+	.hljs-template-variable {
+		color: #bd63c5;
+	}
+
+	.hljs-attr,
+	.hljs-attribute,
+	.hljs-builtin-name {
+		color: #9cdcfe;
+	}
+
+	.hljs-section {
+		color: gold;
+	}
+
+	.hljs-bullet,
+	.hljs-selector-tag,
+	.hljs-selector-id,
+	.hljs-selector-class,
+	.hljs-selector-attr,
+	.hljs-selector-pseudo {
+		color: #d7ba7d;
+	}
+}
+
+/*
+CSS-only light/dark toggle. Include the following element to enable the toggle.
+
+<input type="checkbox" class="silver-theme-toggle" enabled />
+*/
+input.silver-theme-toggle[type="checkbox"] {
+	position: fixed;
+	height: 0;
+	right: 0.5em;
+	top: 0.2em;
+	z-index: 1000;
+
+	transform: scale(2);
+	transform-origin: top right;
+	cursor: pointer;
+}
+
+input.silver-theme-toggle[type="checkbox"]::after {
+	font-family: "Noto Emoji", emoji;
+	color: var(--foreground-color);
+	opacity: 0.2;
+
+	transition: color var(--transition-time), opacity var(--transition-time);
+}
+
+input.silver-theme-toggle[type="checkbox"]:hover::after {
+	opacity: 1;
+}
+
+@media (prefers-color-scheme: light) {
+	input.silver-theme-toggle[type="checkbox"]:not(:checked)::after {
+		content: "🌙";
+		font-weight: 1000;
+	}
+
+	input.silver-theme-toggle[type="checkbox"]:not(:checked) {
+		transform: scale(1.8);
+	}
+
+	input.silver-theme-toggle[type="checkbox"]:checked::after {
+		content: "🔆";
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	input.silver-theme-toggle[type="checkbox"]:not(:checked)::after {
+		content: "🔆";
+	}
+
+	input.silver-theme-toggle[type="checkbox"]:checked::after {
+		content: "🌙";
+		font-weight: 1000;
+	}
+
+	input.silver-theme-toggle[type="checkbox"]:checked {
+		transform: scale(1.8);
+	}
+}
+
+/* Printing hides toggle. */
+@media print {
+	input.silver-theme-toggle[type="checkbox"]::after {
+		display: none;
+	}
+}
+
+/* VSCode web preview hides toggle. */
+body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
+	display: none;
+}
+
+/* `silver-theme-toggle` state modifies light/dark theming via `has()`. */
+@media (prefers-color-scheme: dark) {
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
+		--foreground-color: rgb(0, 0, 0);
+		--background-color: rgb(255, 255, 255);
+		--textlink-foreground-color: rgb(0, 106, 177);
+		--pre-background-color: rgba(220, 220, 220, 0.4);
+		--border-color: rgba(0, 0, 0, 0.18);
+		--code-color: rgb(163, 21, 21);
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-function,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-function,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-params,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-params,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-number,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-number,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-class,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-class {
+		color: inherit;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-comment,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-comment,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-quote,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-quote,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-number,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-number,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-class,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-class,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-variable,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-variable {
+		color: #008000;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-keyword,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-keyword,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-tag,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-name,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-name,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-tag,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-tag {
+		color: #00f;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-built_in,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-built_in,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-builtin-name {
+		color: #007acc;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-string,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-string,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-section,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-section,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attribute,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attribute,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-literal,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-literal,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-template-tag,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-template-variable,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-type,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-type {
+		color: #a31515;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-subst,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-subst,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-attr,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-pseudo,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-meta,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-meta,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-meta-keyword {
+		color: #2b91af;
+	}
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-title,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-title,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-doctag,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-doctag {
+		color: #808080;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attr,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attr {
+		color: #f00;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-symbol,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-symbol,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-bullet,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-bullet,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-link,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-link {
+		color: #00b0e8;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-emphasis,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-emphasis {
+		font-style: italic;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-strong,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-strong {
+		font-weight: bold;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
+		--foreground-color: rgb(212, 212, 212);
+		--background-color: rgb(30, 30, 30);
+		--textlink-foreground-color: rgb(55, 148, 255);
+		--pre-background-color: rgba(10, 10, 10, 0.4);
+		--border-color: rgba(255, 255, 255, 0.18);
+		--code-color: rgb(215, 186, 125);
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-keyword,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-keyword,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-literal,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-literal,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-symbol,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-symbol,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-name,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-name {
+		color: #569cd6;
+	}
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-link,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-link {
+		color: #569cd6;
+		text-decoration: underline;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-built_in,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-built_in,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-type,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-type {
+		color: #4ec9b0;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-number,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-number,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-class,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-class {
+		color: #b8d7a3;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-string,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-string,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-meta-string,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-meta-string {
+		color: #d69d85;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-regexp,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-regexp,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-template-tag,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-template-tag {
+		color: #9a5334;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-subst,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-subst,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-function,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-function,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-title,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-title,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-params,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-params,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-formula,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-formula {
+		color: #dcdcdc;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-comment,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-comment,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-quote,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-quote {
+		color: #57a64a;
+		font-style: italic;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-doctag,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-doctag {
+		color: #608b4e;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-meta,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-meta,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-meta-keyword,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-meta-keyword,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-tag,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-tag {
+		color: #9b9b9b;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-variable,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-variable,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-template-variable,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-template-variable {
+		color: #bd63c5;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attr,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attr,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attribute,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-attribute,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-builtin-name,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-builtin-name {
+		color: #9cdcfe;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-section,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-section {
+		color: gold;
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-bullet,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-bullet,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-tag,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-tag,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-id,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-id,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-class,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-class,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-attr,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-attr,
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-pseudo,
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked)
+		.hljs-selector-pseudo {
+		color: #d7ba7d;
+	}
+}

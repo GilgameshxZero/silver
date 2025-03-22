@@ -1,3 +1,5 @@
+/* The <p> element after each <h1> will appear as its subtitle. */
+
 h1 {
 	margin-bottom: calc(
 		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * -0.1

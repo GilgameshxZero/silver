@@ -1,4 +1,5 @@
 /* The force CSS pages allow forcing light/dark theme regardless of preference when included after essay.css. Usually not used in VSCode webview preview, but in-browser with set light/dark theme. */
+
 :root,
 :host {
 	--foreground-color: rgb(0, 0, 0);
@@ -10,26 +11,33 @@
 }
 
 .hljs-function,
-.hljs-params {
+.hljs-params,
+.hljs-number,
+.hljs-class {
 	color: inherit;
 }
 
 .hljs-comment,
 .hljs-quote,
+.hljs-number,
+.hljs-class,
 .hljs-variable {
 	color: #008000;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-built_in,
 .hljs-name,
 .hljs-tag {
 	color: #00f;
 }
 
+.hljs-built_in,
+.hljs-builtin-name {
+	color: #007acc;
+}
+
 .hljs-string,
-.hljs-title,
 .hljs-section,
 .hljs-attribute,
 .hljs-literal,
@@ -39,12 +47,14 @@
 	color: #a31515;
 }
 
+.hljs-subst,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
-.hljs-meta {
+.hljs-meta,
+.hljs-meta-keyword {
 	color: #2b91af;
 }
-
+.hljs-title,
 .hljs-doctag {
 	color: #808080;
 }
