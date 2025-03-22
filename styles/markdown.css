@@ -16,34 +16,53 @@
 	text-align: right;
 }
 
-/* Markdown font options. Primary font must be defined in `silver` `fonts.css`. Secondary fonts may be utilized to cover more obscure code points. */
-.fangsong,
-.kaiti {
-	font-family: KaiTi, "Latin Modern Roman 10", "EB Garamond", fangsong;
-}
+/*
+Markdown font options. Fonts must be defined in `fonts.css`.
+Each font-family must be succeeded by a default font-family.
+Codepoints not covered by the primary font may be supplemented by secondary fonts.
 
+Roughly, there are four classes of font-families, for both latin and CJK codepoints:
+
+1. serif
+2. sans-serif
+3. monospace
+4. cursive
+*/
 .serif,
 .latin-modern-roman-10 {
-	font-family: "Latin Modern Roman 10", "EB Garamond", KaiTi, serif;
+	font-family: "Latin Modern Roman 10", KaiTi, "Noto Emoji", serif;
+}
+
+.kaiti {
+	font-family: KaiTi, "Latin Modern Roman 10", "Noto Emoji", fangsong;
 }
 
 .eb-garamond {
-	font-family: "EB Garamond", KaiTi, serif;
+	font-family: "EB Garamond", KaiTi, "Noto Emoji", serif;
 }
 
 .sans-serif,
 .roboto {
-	font-family: Roboto, KaiTi, sans-serif;
+	font-family: Roboto, "Noto Emoji", sans-serif;
+}
+
+.fangsong {
+	font-family: "Noto Emoji", fangsong;
 }
 
 .monospace,
 .consolas {
-	font-family: Consolas, KaiTi, monospace;
+	font-family: Consolas, "Noto Emoji", monospace;
 }
 
 .cursive,
 .tangerine {
-	font-family: Tangerine, KaiTi, cursive;
+	font-family: Tangerine, "Noto Emoji", cursive;
+}
+
+.emoji,
+.noto-emoji {
+	font-family: "Noto Emoji", emoji;
 }
 
 /* Markdown element styles. */
@@ -58,7 +77,7 @@ p {
 	word-wrap: break-word;
 }
 
-.next-flow-root + * {
+.silver-flow-root + * {
 	display: flow-root;
 }
 
@@ -85,7 +104,7 @@ pre {
 
 code {
 	white-space: pre-wrap;
-	font-family: Consolas, KaiTi, monospace;
+	font-family: Consolas, monospace;
 	font-size: 0.9em;
 	text-indent: 0;
 	font-weight: 300;
@@ -124,7 +143,7 @@ h1 {
 	font-size: 1.7em;
 }
 
-.next-subtitled + h1 {
+.silver-subtitled + h1 {
 	margin-bottom: calc(
 		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * -0.1
 	);
@@ -133,7 +152,7 @@ h1 {
 	border: none;
 }
 
-.next-subtitled + h1 + p {
+.silver-subtitled + h1 + p {
 	--paragraph-indent: 0ch;
 
 	margin-bottom: calc(
@@ -162,7 +181,7 @@ h2 {
 	border-bottom: 0.05em solid var(--border-color);
 }
 
-.next-subtitled + h2 {
+.silver-subtitled + h2 {
 	margin-bottom: calc(
 		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * -0.3
 	);
@@ -171,7 +190,7 @@ h2 {
 	border: none;
 }
 
-.next-subtitled + h2 + p {
+.silver-subtitled + h2 + p {
 	--paragraph-indent: 0ch;
 
 	margin-bottom: calc(
@@ -241,7 +260,7 @@ hr:after {
 	content: var(--hr-content);
 }
 
-.next-revert + hr {
+.silver-revert + hr {
 	margin: calc(
 			(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * 1.5
 		)
@@ -253,7 +272,7 @@ hr:after {
 	page-break-inside: avoid;
 }
 
-.next-revert + hr:after {
+.silver-revert + hr:after {
 	content: none;
 }
 
@@ -468,7 +487,7 @@ summary::-webkit-details-marker {
 	color: var(--list-marker-color);
 }
 
-summary>p {
+summary > p {
 	display: inline;
 }
 
@@ -531,6 +550,10 @@ aside.pullquote {
 ol li::marker,
 ul li::marker {
 	color: var(--list-marker-color);
+}
+
+ul li input[type="checkbox"] {
+	accent-color: var(--list-marker-color);
 }
 
 /* Additional katex options not specified in VSCode. */
