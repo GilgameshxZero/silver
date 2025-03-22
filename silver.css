@@ -1,46 +1,18 @@
 /* Shared CSS page for general VSCode-generated Markdown HTML. Forms a complete package without need for any additional CSS or JS. */
+@import "styles/theme.css";
 @import "styles/fonts.css";
 @import "styles/katex.css";
 @import "styles/markdown.css";
 @import "styles/vscode.css";
 
-/* Variables to be redefined for custom styling. */
+/* Variables to be redefined by the client for custom styling. More in `theme.css`. */
 :root,
 :host {
 	--paragraph-spacing: 2em;
 	--paragraph-indent: 0ch;
 	--line-height: 1.5;
 	--hr-content: "❄";
-
-	/* Traditionally shared variables between light/dark mode. */
-	--blockquote-background-color: rgba(127, 127, 127, 0.1);
-	--blockquote-border-color: rgba(0, 122, 204, 0.5);
-	--list-marker-color: rgb(0, 122, 204);
-}
-
-/* Traditionally light/dark mode-dependent variables. Derived from in-preview colors. Overridden when in VSCode web preview. */
-@media (prefers-color-scheme: light) {
-	:root,
-	:host {
-		--foreground-color: rgb(0, 0, 0);
-		--background-color: rgb(255, 255, 255);
-		--textlink-foreground-color: rgb(0, 106, 177);
-		--pre-background-color: rgba(220, 220, 220, 0.4);
-		--border-color: rgba(0, 0, 0, 0.18);
-		--code-color: rgb(163, 21, 21);
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	:root,
-	:host {
-		--foreground-color: rgb(212, 212, 212);
-		--background-color: rgb(30, 30, 30);
-		--textlink-foreground-color: rgb(55, 148, 255);
-		--pre-background-color: rgba(10, 10, 10, 0.4);
-		--border-color: rgba(255, 255, 255, 0.18);
-		--code-color: rgb(215, 186, 125);
-	}
+	--transition-time: 0.4s;
 }
 
 html {
@@ -58,14 +30,18 @@ body {
 	overflow-x: hidden;
 
 	/* Default to the same as .serif */
-	font-family: "Latin Modern Roman 10", "EB Garamond", KaiTi, serif;
+	font-family: "Latin Modern Roman 10", KaiTi, serif;
 	font-size: 1.2em;
 	line-height: var(--line-height);
 	color: var(--foreground-color);
 	background-color: var(--background-color);
+
+	/* Transitions should be applied to other elements but it is not very important. */
+	transition: color var(--transition-time),
+		background-color var(--transition-time);
 }
 
-/* Printing. Preferred-color-scheme is automatically set to light. */
+/* Printing. Preferred-color-scheme is automatically set to light by the browser printing procedure. Styles on `:host,body` are usually not read. */
 @media print {
 	@page {
 		margin: 1in;
@@ -81,7 +57,11 @@ body {
 		font-size: 12pt;
 	}
 
-	.next-page-break {
+	p {
+		overflow-x: hidden;
+	}
+
+	.silver-page-break {
 		clear: both;
 		break-after: page;
 		page-break-after: always;

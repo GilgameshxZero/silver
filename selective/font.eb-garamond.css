@@ -1,0 +1,5 @@
+/* Adjust default font. */
+:host,
+body {
+	font-family: "EB Garamond", KaiTi, "Noto Emoji", serif;
+}
