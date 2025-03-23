@@ -192,7 +192,7 @@ input.silver-theme-toggle[type="checkbox"] {
 input.silver-theme-toggle[type="checkbox"]::after {
 	font-family: "Noto Emoji", emoji;
 	color: var(--foreground-color);
-	opacity: 0.2;
+	opacity: 0.4;
 
 	transition: color var(--transition-time), opacity var(--transition-time);
 }
