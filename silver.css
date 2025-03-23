@@ -1,8 +1,8 @@
 /* Shared CSS page for general VSCode-generated Markdown HTML. Forms a complete package without need for any additional CSS or JS. */
-@import "styles/theme.css";
 @import "styles/fonts.css";
 @import "styles/katex.css";
 @import "styles/markdown.css";
+@import "styles/theme.css";
 @import "styles/vscode.css";
 
 /* Variables to be redefined by the client for custom styling. More in `theme.css`. */
