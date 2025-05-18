@@ -12,7 +12,7 @@
 	--paragraph-indent: 0ch;
 	--line-height: 1.5;
 	--hr-content: "❄";
-	--transition-time: 0.4s;
+	--transition-time: 0;
 }
 
 html {
@@ -31,7 +31,7 @@ body {
 
 	/* Default to the same as .serif */
 	font-family: "Latin Modern Roman 10", KaiTi, serif;
-	font-size: 1.2em;
+	font-size: 1.1875em;
 	line-height: var(--line-height);
 	color: var(--foreground-color);
 	background-color: var(--background-color);
