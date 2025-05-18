@@ -349,6 +349,7 @@ blockquote {
 		0;
 
 	border-left: 0.25em solid var(--blockquote-border-color);
+	border-radius: 0;
 	background-color: var(--blockquote-background-color);
 	text-indent: var(--paragraph-indent);
 }
