@@ -10,8 +10,8 @@ Some colors are custom-defined and overwritten.
 
 /* These custom styles under `body[data-vscode-theme-name]` only apply in the VSCode web preview. They guarantee consistency of the Markdown web preview under different VSCode themes. */
 body[data-vscode-theme-name] {
-	/* Resets the 1.2em scaling on `silver.css`. */
-	font-size: 1em;
+	/* Can reset the em scaling on `silver.css`. */
+	/* font-size: 1em; */
 
 	--foreground-color: var(--vscode-editor-foreground);
 	--background-color: var(--vscode-editor-background);
