@@ -123,6 +123,11 @@ code > code {
 	font-size: 1em;
 }
 
+.silver-h0 + p {
+	font-size: 5em;
+	text-align: center;
+}
+
 h1,
 h2 {
 	font-weight: normal;
@@ -269,7 +274,6 @@ hr:after {
 
 	border-top: 0.1em solid var(--border-color);
 	break-inside: avoid;
-	page-break-inside: avoid;
 }
 
 .silver-revert + hr:after {
@@ -290,7 +294,6 @@ table {
 	overflow: auto;
 
 	break-inside: avoid;
-	page-break-inside: avoid;
 }
 
 table thead {
@@ -372,7 +375,6 @@ video {
 		auto;
 
 	break-inside: avoid;
-	page-break-inside: avoid;
 }
 
 img[src*="#large"],
@@ -414,7 +416,7 @@ video + br + em {
 	--paragraph-indent: 0ch;
 
 	display: flow-root;
-	max-width: 100%;
+	max-width: 75%;
 	margin: calc(
 			(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * -1.3
 		)

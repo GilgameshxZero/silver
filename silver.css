@@ -2,6 +2,7 @@
 @import "styles/fonts.css";
 @import "styles/katex.css";
 @import "styles/markdown.css";
+@import "styles/silverine.css";
 @import "styles/theme.css";
 @import "styles/vscode.css";
 
@@ -42,9 +43,25 @@ body {
 }
 
 /* Printing. Preferred-color-scheme is automatically set to light by the browser printing procedure. Styles on `:host,body` are usually not read. */
+/* Page numbers and background colors not supported in Firefox yet. */
 @media print {
 	@page {
+		size: A4 portrait;
 		margin: 1in;
+
+		color: var(--foreground-color);
+		background-color: var(--background-color);
+		font-size: 0.75em;
+
+		@bottom-right-corner {
+			font-family: "Latin Modern Roman 10", KaiTi, serif;
+
+			/* Not actually horizontally center sometimes, for some reason, but it looks okay. */
+			text-align: center;
+
+			vertical-align: center;
+			content: counter(page) "/" counter(pages);
+		}
 	}
 
 	:host,
@@ -64,6 +81,5 @@ body {
 	.silver-page-break {
 		clear: both;
 		break-after: page;
-		page-break-after: always;
 	}
 }

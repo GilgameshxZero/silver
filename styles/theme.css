@@ -26,7 +26,8 @@
 }
 
 /* Traditionally light/dark mode-dependent variables. Derived from in-preview colors. Overridden when in VSCode web preview. Derived from `vscode.css` selections, with care. */
-@media (prefers-color-scheme: light) {
+/* Print theming is light default, and reversed by the state of the theme toggle. */
+@media (prefers-color-scheme: light), print {
 	:root,
 	:host {
 		--foreground-color: var(--foreground-color-light);
@@ -384,7 +385,7 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 	}
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light), print {
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
 	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
 		--foreground-color: var(--foreground-color-dark);
