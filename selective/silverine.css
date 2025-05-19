@@ -1,0 +1,83 @@
+/* Print styles for presentation slides. `silverine` uses `section` to deliminate slides/pages. Otherwise, `section`s render transparently without `silverine`. */
+/* `silver-theme-toggle` can be used to print in light/dark theme. */
+/* Printing in Chromium browsers is recommended. */
+@media print {
+	@page {
+		size: A4 landscape;
+
+		/* Firefox sizes 100vh as print height - 1.01in, so we offset it here a little. */
+		margin: 0.5in 1in 0.49in;
+
+		font-size: 1em;
+	}
+
+	:host,
+	body {
+		font-size: 18pt;
+	}
+}
+
+section {
+	/* Allows positioning of `--hr-content` in non-print view. */
+	position: relative;
+
+	width: 100%;
+	padding: 0 0 1em 0;
+	height: calc(100vh + 1em);
+
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+section:after {
+	position: absolute;
+	display: block;
+	text-align: center;
+
+	bottom: 0;
+	width: 100%;
+
+	content: var(--hr-content);
+}
+
+section.center {
+	align-items: center;
+	justify-content: center;
+}
+
+section.center h1,
+section.center h2,
+section.center h1 + p,
+section.center h2 + p {
+	border-bottom: none;
+}
+
+section.bottom.right {
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+@media print {
+	/* Revert `--hr-content` sizing. */
+	section {
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+
+		break-inside: avoid-page;
+		break-after: page;
+	}
+
+	section:after {
+		display: none;
+	}
+
+	/* Page margins and element margins do not collapse, so we do manual sizing here. */
+	section :first-child {
+		margin-top: 0;
+	}
+
+	section :last-child {
+		margin-bottom: 0;
+	}
+}
