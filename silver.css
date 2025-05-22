@@ -2,18 +2,18 @@
 @import "styles/fonts.css";
 @import "styles/katex.css";
 @import "styles/markdown.css";
-@import "styles/silverine.css";
 @import "styles/theme.css";
 @import "styles/vscode.css";
 
 /* Variables to be redefined by the client for custom styling. More in `theme.css`. */
 :root,
 :host {
-	--paragraph-spacing: 2em;
-	--paragraph-indent: 0ch;
-	--line-height: 1.5;
-	--hr-content: "❄";
-	--transition-time: 0;
+	--silver-paragraph-spacing: 2em;
+	--silver-paragraph-indent: 0ch;
+	--silver-line-height: 1.5;
+	--silver-hr-content: "❄";
+	--silver-transition-time: 0;
+	--silver-editor-font-size: 1.1875em;
 }
 
 html {
@@ -32,14 +32,14 @@ body {
 
 	/* Default to the same as .serif */
 	font-family: "Latin Modern Roman 10", KaiTi, "Noto Emoji", serif;
-	font-size: 1.1875em;
-	line-height: var(--line-height);
-	color: var(--foreground-color);
-	background-color: var(--background-color);
+	font-size: var(--silver-editor-font-size);
+	line-height: var(--silver-line-height);
+	color: var(--silver-foreground-color);
+	background-color: var(--silver-background-color);
 
 	/* Transitions should be applied to other elements but it is not very important. */
-	transition: color var(--transition-time),
-		background-color var(--transition-time);
+	transition: color var(--silver-transition-time),
+		background-color var(--silver-transition-time);
 }
 
 /* Printing. Preferred-color-scheme is automatically set to light by the browser printing procedure. Styles on `:host,body` are usually not read. */
@@ -49,8 +49,8 @@ body {
 		size: A4 portrait;
 		margin: 1in;
 
-		color: var(--foreground-color);
-		background-color: var(--background-color);
+		color: var(--silver-foreground-color);
+		background-color: var(--silver-background-color);
 		font-size: 0.75em;
 
 		@bottom-right-corner {

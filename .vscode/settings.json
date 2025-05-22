@@ -1,0 +1,7 @@
+{
+	"markdown.styles": [".vscode/default.css"],
+
+	// It is recommended to print to bare HTML to minimize template code. However, care must be taken to ensure that stylesheets are still loaded correctly.
+	"markdown.extension.print.includeVscodeStylesheets": true,
+	"markdown.extension.print.pureHtml": true
+}

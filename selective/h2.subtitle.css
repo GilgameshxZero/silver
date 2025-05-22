@@ -2,7 +2,7 @@
 
 h2 {
 	margin-bottom: calc(
-		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * -0.3
+		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * -0.3
 	);
 	padding-bottom: 0;
 
@@ -10,17 +10,17 @@ h2 {
 }
 
 h2 + p {
-	--paragraph-indent: 0ch;
+	--silver-paragraph-indent: 0ch;
 
 	margin-bottom: calc(
-		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * 0.5
+		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
 	);
 	padding-bottom: calc(
-		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * 0.3
+		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.3
 	);
 	width: 80%;
 	clear: both;
 
-	border-bottom: 0.1em solid var(--border-color);
-	text-indent: var(--paragraph-indent);
+	border-bottom: 0.1em solid var(--silver-border-color);
+	text-indent: var(--silver-paragraph-indent);
 }
