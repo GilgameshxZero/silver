@@ -10,36 +10,36 @@ Some colors are custom-defined and overwritten.
 
 /* These custom styles under `body[data-vscode-theme-name]` only apply in the VSCode web preview. They guarantee consistency of the Markdown web preview under different VSCode themes. */
 body[data-vscode-theme-name] {
-	/* Can reset the em scaling on `silver.css`. */
-	/* font-size: 1em; */
+	/* Choose to reset the font scaling in `silver.css`, since the editor preview may apply the scaling on top of the VSCode editor font size, which is scaled by the user settings already. */
+	font-size: 1em;
 
-	--foreground-color: var(--vscode-editor-foreground);
-	--background-color: var(--vscode-editor-background);
-	--textlink-foreground-color: var(--vscode-textLink-foreground);
-	--blockquote-background-color: var(--vscode-textBlockQuote-background);
-	--blockquote-border-color: var(--vscode-textBlockQuote-border);
-	--pre-background-color: var(--vscode-textCodeBlock-background);
+	--silver-foreground-color: var(--vscode-editor-foreground);
+	--silver-background-color: var(--vscode-editor-background);
+	--silver-textlink-foreground-color: var(--vscode-textLink-foreground);
+	--silver-blockquote-background-color: var(--vscode-textBlockQuote-background);
+	--silver-blockquote-border-color: var(--vscode-textBlockQuote-border);
+	--silver-pre-background-color: var(--vscode-textCodeBlock-background);
 }
 
 body[data-vscode-theme-name].vscode-light {
-	--border-color: rgba(0, 0, 0, 0.18);
-	--code-color: rgb(162, 21, 21);
+	--silver-border-color: rgba(0, 0, 0, 0.18);
+	--silver-code-color: rgb(162, 21, 21);
 }
 
 body[data-vscode-theme-name].vscode-dark {
-	--border-color: rgba(255, 255, 255, 0.18);
-	--code-color: rgb(215, 186, 125);
+	--silver-border-color: rgba(255, 255, 255, 0.18);
+	--silver-code-color: rgb(215, 186, 125);
 }
 
 /* TODO: More selector specificity needed? Seems fine under the default VSCode themes, but perhaps breaks under other themes. */
 body[data-vscode-theme-name].vscode-light table th,
 body[data-vscode-theme-name].vscode-dark table th {
 	padding: calc(
-		(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1)) * 0.5
+		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
 	);
 
 	border: none;
-	border-bottom: 0.1em solid var(--border-color);
+	border-bottom: 0.1em solid var(--silver-border-color);
 }
 
 body[data-vscode-theme-name].vscode-light a,
@@ -415,10 +415,10 @@ body[data-vscode-theme-name].vscode-light .hljs-strong {
 	font-weight: bold;
 }
 
-/* Special padding for pre elements based on --paragraph-spacing and --line-height. */
+/* Special padding for pre elements based on --silver-paragraph-spacing and --silver-line-height. */
 pre:not(.hljs),
 pre.hljs code > div {
-	padding: calc(var(--paragraph-spacing) / 2 + 1em * (var(--line-height) - 1));
+	padding: calc(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1));
 }
 
 /* Task list CSS from VSCode extension. */

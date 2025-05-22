@@ -4,25 +4,27 @@
 :root,
 :host {
 	/* Traditionally shared variables between light/dark mode. */
-	--blockquote-background-color: rgba(127, 127, 127, 0.1);
-	--blockquote-border-color: rgba(0, 122, 204, 0.5);
+	--silver-blockquote-background-color: rgba(127, 127, 127, 0.1);
+	--silver-blockquote-border-color: rgba(0, 122, 204, 0.5);
 	--list-marker-color: rgb(0, 122, 204);
 
 	/* Base variables are conditionally set by themed variables. */
-	--foreground-color-light: rgb(0, 0, 0);
-	--background-color-light: rgb(255, 255, 255);
-	--textlink-foreground-color-light: rgb(0, 106, 177);
-	--pre-background-color-light: rgba(220, 220, 220, 0.4);
-	--border-color-light: rgba(0, 0, 0, 0.18);
-	--code-color-light: rgb(163, 21, 21);
+	--silver-foreground-color-light: rgb(0, 0, 0);
+	--silver-background-color-light: rgb(255, 255, 255);
+	--silver-textlink-foreground-color-light: rgb(0, 106, 177);
+	--silver-pre-background-color-light: rgba(220, 220, 220, 0.4);
+	--silver-border-color-light: rgba(0, 0, 0, 0.18);
+	--silver-code-color-light: rgb(163, 21, 21);
 
-	--foreground-color-dark: rgb(212, 212, 212);
-	/* Dark mode background is overridden from default `rgb(30, 30, 30)`. */
-	--background-color-dark: rgb(0, 0, 0);
-	--textlink-foreground-color-dark: rgb(55, 148, 255);
-	--pre-background-color-dark: rgba(10, 10, 10, 0.4);
-	--border-color-dark: rgba(255, 255, 255, 0.18);
-	--code-color-dark: rgb(215, 186, 125);
+	--silver-foreground-color-dark: rgb(212, 212, 212);
+	--silver-background-color-dark: rgb(30, 30, 30);
+	--silver-textlink-foreground-color-dark: rgb(55, 148, 255);
+	--silver-pre-background-color-dark: rgba(10, 10, 10, 0.4);
+	--silver-border-color-dark: rgba(255, 255, 255, 0.18);
+	--silver-code-color-dark: rgb(215, 186, 125);
+	
+	/* Dark mode overrides from default. */
+	--silver-background-color-dark: rgb(0, 0, 0);
 }
 
 /* Traditionally light/dark mode-dependent variables. Derived from in-preview colors. Overridden when in VSCode web preview. Derived from `vscode.css` selections, with care. */
@@ -30,12 +32,12 @@
 @media (prefers-color-scheme: light), print {
 	:root,
 	:host {
-		--foreground-color: var(--foreground-color-light);
-		--background-color: var(--background-color-light);
-		--textlink-foreground-color: var(--textlink-foreground-color-light);
-		--pre-background-color: var(--pre-background-color-light);
-		--border-color: var(--border-color-light);
-		--code-color: var(--code-color-light);
+		--silver-foreground-color: var(--silver-foreground-color-light);
+		--silver-background-color: var(--silver-background-color-light);
+		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-light);
+		--silver-pre-background-color: var(--silver-pre-background-color-light);
+		--silver-border-color: var(--silver-border-color-light);
+		--silver-code-color: var(--silver-code-color-light);
 	}
 
 	.hljs-function,
@@ -101,12 +103,12 @@
 @media (prefers-color-scheme: dark) {
 	:root,
 	:host {
-		--foreground-color: var(--foreground-color-dark);
-		--background-color: var(--background-color-dark);
-		--textlink-foreground-color: var(--textlink-foreground-color-dark);
-		--pre-background-color: var(--pre-background-color-dark);
-		--border-color: var(--border-color-dark);
-		--code-color: var(--code-color-dark);
+		--silver-foreground-color: var(--silver-foreground-color-dark);
+		--silver-background-color: var(--silver-background-color-dark);
+		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-dark);
+		--silver-pre-background-color: var(--silver-pre-background-color-dark);
+		--silver-border-color: var(--silver-border-color-dark);
+		--silver-code-color: var(--silver-code-color-dark);
 	}
 
 	.hljs-keyword,
@@ -211,10 +213,10 @@ input.silver-theme-toggle[type="checkbox"] {
 
 input.silver-theme-toggle[type="checkbox"]::after {
 	font-family: "Noto Emoji", "EB Garamond", emoji;
-	color: var(--foreground-color);
+	color: var(--silver-foreground-color);
 	opacity: 0.4;
 
-	transition: color var(--transition-time), opacity var(--transition-time);
+	transition: color var(--silver-transition-time), opacity var(--silver-transition-time);
 }
 
 input.silver-theme-toggle[type="checkbox"]:hover::after {
@@ -267,12 +269,12 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 @media (prefers-color-scheme: dark) {
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
 	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
-		--foreground-color: var(--foreground-color-light);
-		--background-color: var(--background-color-light);
-		--textlink-foreground-color: var(--textlink-foreground-color-light);
-		--pre-background-color: var(--pre-background-color-light);
-		--border-color: var(--border-color-light);
-		--code-color: var(--code-color-light);
+		--silver-foreground-color: var(--silver-foreground-color-light);
+		--silver-background-color: var(--silver-background-color-light);
+		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-light);
+		--silver-pre-background-color: var(--silver-pre-background-color-light);
+		--silver-border-color: var(--silver-border-color-light);
+		--silver-code-color: var(--silver-code-color-light);
 	}
 
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-function,
@@ -388,12 +390,12 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 @media (prefers-color-scheme: light), print {
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
 	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
-		--foreground-color: var(--foreground-color-dark);
-		--background-color: var(--background-color-dark);
-		--textlink-foreground-color: var(--textlink-foreground-color-dark);
-		--pre-background-color: var(--pre-background-color-dark);
-		--border-color: var(--border-color-dark);
-		--code-color: var(--code-color-dark);
+		--silver-foreground-color: var(--silver-foreground-color-dark);
+		--silver-background-color: var(--silver-background-color-dark);
+		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-dark);
+		--silver-pre-background-color: var(--silver-pre-background-color-dark);
+		--silver-border-color: var(--silver-border-color-dark);
+		--silver-code-color: var(--silver-code-color-dark);
 	}
 
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-keyword,

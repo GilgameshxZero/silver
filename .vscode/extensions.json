@@ -1,0 +1,6 @@
+{
+	"recommendations": [
+		// Allows for printing of Markdown to HTML.
+		"yzhang.markdown-all-in-one"
+	]
+}

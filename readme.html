@@ -1,0 +1,49 @@
+<!-- It is not necessary to directly import stylesheets in each Markdown file if `settings.json` points to the correct stylesheet. However, printing Bare HTML will not include the stylesheets in `settings.json`, so while printing, the HTML link is still needed. -->
+<link rel="stylesheet" href="silver.css">
+<!-- Theme toggle allows for toggling of light/dark theme in browser only. This also affects the print theme in `silverine`. -->
+<input type="checkbox" class="silver-theme-toggle" enabled />
+<h1 id="silver"><code>silver</code></h1>
+<p><code>silver</code> styles Markdown essays and is built to standardize typography and styling options between VSCode in-editor previews, HTMLs printed from Markdown, and printed PDFs from HTMLs.</p>
+<p><code>silverine</code> optionally provides a framework to print Markdown to slides-like PDFs and render them as slides-like HTMLs.</p>
+<h2 id="usage">Usage</h2>
+<p>Include <code>silver.css</code> to get started. In Markdown/HTML, write</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;../silver/silver.css&quot;</span>&gt;</span>
+</code></pre>
+<p>or write in CSS</p>
+<pre><code class="language-css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;../silver/silver.css&quot;</span>;
+</code></pre>
+<p>Selective styles may be included similarly.</p>
+<h2 id="options">Options</h2>
+<p>Adjust typography options by setting CSS variables manually, either globally or for a block. The following are default values defined in <code>silver.css</code>:</p>
+<pre><code class="language-css"><span class="hljs-selector-pseudo">:root</span>,
+<span class="hljs-selector-pseudo">:host</span> {
+	<span class="hljs-comment">/*  between &lt;p&gt; elements. Also affects spacing around blockquote-like and header-like elements. */</span>
+	<span class="hljs-attr">--silver-paragraph-spacing</span>: <span class="hljs-number">2em</span>;
+
+	<span class="hljs-comment">/* Paragraph indent. */</span>
+	<span class="hljs-attr">--silver-paragraph-indent</span>: <span class="hljs-number">0ch</span>;
+
+	<span class="hljs-comment">/* Line height. Also affects spacing around blockquote-like and header-like elements. */</span>
+	<span class="hljs-attr">--silver-line-height</span>: <span class="hljs-number">1.5</span>;
+
+	<span class="hljs-comment">/* &lt;hr&gt; elements are replaced with a centered element of this content. */</span>
+	<span class="hljs-attr">--silver-hr-content</span>: <span class="hljs-string">&quot;❄&quot;</span>;
+
+	<span class="hljs-comment">/* Transitions in the HTML page are timed around this. */</span>
+	<span class="hljs-attr">--silver-transition-time</span>: <span class="hljs-number">0</span>;
+
+	<span class="hljs-comment">/* Should be set consistent to the VSCode editor font-size. Compute this by taking font-size / 16px; i.e. 1.1875 corresponds to a VSCode font-size of 16px. */</span>
+	<span class="hljs-attr">--silver-editor-font-size</span>: <span class="hljs-number">1.1875em</span>;
+}
+</code></pre>
+<h2 id="classes">Classes</h2>
+<p>Additional optional styling may be applied per-element by applying classes to that element in Markdown. Classes are mostly defined in <code>styles/markdown.css</code> and <code>selective/silverine.css</code> and are all prefixed with <code>silver-</code>.</p>
+<h2 id="silverine"><code>silverine</code></h2>
+<p><code>silverine</code> is a <code>beamer</code>-like framework to translate Markdown into presentation PDFs. Start by including the selective CSS:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;../silver/selective/silverine.css&quot;</span>&gt;</span>
+</code></pre>
+<pre><code class="language-css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;../silver/selective/silverine.css&quot;</span>;
+</code></pre>
+<p>Each slide should be wrapped in <code>&lt;section&gt;</code>. See <code>selective/silverine.css</code> for more styling options.</p>
+<h2 id="fonts">Fonts</h2>
+<p>Select fonts are specified in <code>styles/fonts.css</code>, and are fully included in <code>silver</code> under <code>fonts/</code>. Fonts are subsetted according to a conservative set of glyphs to minimize data transfer necessary.</p>

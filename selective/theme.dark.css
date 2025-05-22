@@ -2,12 +2,12 @@
 
 :root,
 :host {
-	--foreground-color: var(--foreground-color-dark);
-	--background-color: var(--background-color-dark);
-	--textlink-foreground-color: var(--textlink-foreground-color-dark);
-	--pre-background-color: var(--pre-background-color-dark);
-	--border-color: var(--border-color-dark);
-	--code-color: var(--code-color-dark);
+	--silver-foreground-color: var(--silver-foreground-color-dark);
+	--silver-background-color: var(--silver-background-color-dark);
+	--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-dark);
+	--silver-pre-background-color: var(--silver-pre-background-color-dark);
+	--silver-border-color: var(--silver-border-color-dark);
+	--silver-code-color: var(--silver-code-color-dark);
 }
 
 .hljs-keyword,
