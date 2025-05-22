@@ -41,8 +41,8 @@ section:after {
 }
 
 section.center {
-	align-items: center;
 	justify-content: center;
+	text-align: center;
 }
 
 section.center h1,
@@ -53,8 +53,8 @@ section.center h2 + p {
 }
 
 section.bottom.right {
-	align-items: flex-end;
 	justify-content: flex-end;
+	text-align: right;
 }
 
 @media print {

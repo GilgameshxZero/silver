@@ -31,7 +31,7 @@ body {
 	overflow-x: hidden;
 
 	/* Default to the same as .serif */
-	font-family: "Latin Modern Roman 10", KaiTi, serif;
+	font-family: "Latin Modern Roman 10", KaiTi, "Noto Emoji", serif;
 	font-size: 1.1875em;
 	line-height: var(--line-height);
 	color: var(--foreground-color);
@@ -54,7 +54,7 @@ body {
 		font-size: 0.75em;
 
 		@bottom-right-corner {
-			font-family: "Latin Modern Roman 10", KaiTi, serif;
+			font-family: "Latin Modern Roman 10", KaiTi, "Noto Emoji", serif;
 
 			/* Not actually horizontally center sometimes, for some reason, but it looks okay. */
 			text-align: center;
