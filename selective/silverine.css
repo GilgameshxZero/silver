@@ -18,7 +18,7 @@
 }
 
 section {
-	/* Allows positioning of `--hr-content` in non-print view. */
+	/* Allows positioning of `--silver-hr-content` in non-print view. */
 	position: relative;
 
 	width: 100%;
@@ -37,28 +37,39 @@ section:after {
 	bottom: 0;
 	width: 100%;
 
-	content: var(--hr-content);
+	content: var(--silver-hr-content);
 }
 
-section.center {
+section.silver-center {
 	justify-content: center;
 	text-align: center;
 }
 
-section.center h1,
-section.center h2,
-section.center h1 + p,
-section.center h2 + p {
+section.silver-center h1,
+section.silver-center h2,
+section.silver-center h1 + p,
+section.silver-center h2 + p {
 	border-bottom: none;
 }
 
-section.bottom.right {
-	justify-content: flex-end;
+section.silver-top {
+	justify-content: flex-start;
+}
+
+section.silver-right {
 	text-align: right;
 }
 
+section.silver-bottom {
+	justify-content: flex-end;
+}
+
+section.silver-left {
+	text-align: left;
+}
+
 @media print {
-	/* Revert `--hr-content` sizing. */
+	/* Revert `--silver-hr-content` sizing. */
 	section {
 		height: 100vh;
 		margin: 0;
