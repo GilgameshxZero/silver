@@ -1,4 +1,4 @@
-/* The <p> element after each <h1> will appear as its subtitle. */
+/* The <p> element after each <h2> will appear as its subtitle. */
 
 h2 {
 	margin-bottom: calc(
