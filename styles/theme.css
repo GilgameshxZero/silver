@@ -22,9 +22,13 @@
 	--silver-pre-background-color-dark: rgba(10, 10, 10, 0.4);
 	--silver-border-color-dark: rgba(255, 255, 255, 0.18);
 	--silver-code-color-dark: rgb(215, 186, 125);
-	
-	/* Dark mode overrides from default. */
+
+	/* Overrides from VSCode default. */
 	--silver-background-color-dark: rgb(0, 0, 0);
+	--silver-pre-background-color-light: var(
+		--silver-blockquote-background-color
+	);
+	--silver-pre-background-color-dark: var(--silver-blockquote-background-color);
 }
 
 /* Traditionally light/dark mode-dependent variables. Derived from in-preview colors. Overridden when in VSCode web preview. Derived from `vscode.css` selections, with care. */
@@ -34,7 +38,9 @@
 	:host {
 		--silver-foreground-color: var(--silver-foreground-color-light);
 		--silver-background-color: var(--silver-background-color-light);
-		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-light);
+		--silver-textlink-foreground-color: var(
+			--silver-textlink-foreground-color-light
+		);
 		--silver-pre-background-color: var(--silver-pre-background-color-light);
 		--silver-border-color: var(--silver-border-color-light);
 		--silver-code-color: var(--silver-code-color-light);
@@ -105,7 +111,9 @@
 	:host {
 		--silver-foreground-color: var(--silver-foreground-color-dark);
 		--silver-background-color: var(--silver-background-color-dark);
-		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-dark);
+		--silver-textlink-foreground-color: var(
+			--silver-textlink-foreground-color-dark
+		);
 		--silver-pre-background-color: var(--silver-pre-background-color-dark);
 		--silver-border-color: var(--silver-border-color-dark);
 		--silver-code-color: var(--silver-code-color-dark);
@@ -216,7 +224,8 @@ input.silver-theme-toggle[type="checkbox"]::after {
 	color: var(--silver-foreground-color);
 	opacity: 0.4;
 
-	transition: color var(--silver-transition-time), opacity var(--silver-transition-time);
+	transition: color var(--silver-transition-time),
+		opacity var(--silver-transition-time);
 }
 
 input.silver-theme-toggle[type="checkbox"]:hover::after {
@@ -271,7 +280,9 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
 		--silver-foreground-color: var(--silver-foreground-color-light);
 		--silver-background-color: var(--silver-background-color-light);
-		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-light);
+		--silver-textlink-foreground-color: var(
+			--silver-textlink-foreground-color-light
+		);
 		--silver-pre-background-color: var(--silver-pre-background-color-light);
 		--silver-border-color: var(--silver-border-color-light);
 		--silver-code-color: var(--silver-code-color-light);
@@ -392,7 +403,9 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
 		--silver-foreground-color: var(--silver-foreground-color-dark);
 		--silver-background-color: var(--silver-background-color-dark);
-		--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-dark);
+		--silver-textlink-foreground-color: var(
+			--silver-textlink-foreground-color-dark
+		);
 		--silver-pre-background-color: var(--silver-pre-background-color-dark);
 		--silver-border-color: var(--silver-border-color-dark);
 		--silver-code-color: var(--silver-code-color-dark);
