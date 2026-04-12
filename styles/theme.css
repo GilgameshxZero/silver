@@ -8,7 +8,7 @@
 	--silver-blockquote-border-color: rgba(0, 122, 204, 0.5);
 	--list-marker-color: rgb(0, 122, 204);
 
-	/* Base variables are conditionally set by themed variables. */
+	/* Base variables are conditionally set by themed variables. They are derived directly from the VSCode style pages. */
 	--silver-foreground-color-light: rgb(0, 0, 0);
 	--silver-background-color-light: rgb(255, 255, 255);
 	--silver-textlink-foreground-color-light: rgb(0, 106, 177);
@@ -23,7 +23,8 @@
 	--silver-border-color-dark: rgba(255, 255, 255, 0.18);
 	--silver-code-color-dark: rgb(215, 186, 125);
 
-	/* Overrides from VSCode default. */
+	/* Overrides from VSCode default for the `silver` branding. */
+	--silver-foreground-color-dark: rgb(255, 255, 255);
 	--silver-background-color-dark: rgb(0, 0, 0);
 	--silver-pre-background-color-light: var(
 		--silver-blockquote-background-color

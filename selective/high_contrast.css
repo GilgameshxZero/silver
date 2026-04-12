@@ -1,0 +1,79 @@
+/* Removes most color and shading for a mostly black/white style. */
+
+:root,
+:host {
+	--silver-blockquote-background-color: rgba(127, 127, 127, 0);
+
+	--silver-textlink-foreground-color-light: rgb(0, 0, 0);
+	--silver-border-color-light: rgb(0, 0, 0);
+	--silver-code-color-light: rgb(0, 0, 0);
+	--silver-blockquote-border-color-light: rgb(0, 0, 0);
+	--list-marker-color-light: rgb(0, 0, 0);
+
+	--silver-textlink-foreground-color-dark: rgb(255, 255, 255);
+	--silver-border-color-dark: rgb(255, 255, 255);
+	--silver-code-color-dark: rgb(255, 255, 255);
+	--silver-blockquote-border-color-dark: rgb(255, 255, 255);
+	--list-marker-color-dark: rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root,
+	:host {
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-dark
+		);
+		--list-marker-color: var(--list-marker-color-dark);
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-light
+		);
+		--list-marker-color: var(--list-marker-color-light);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root,
+	:host {
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-light
+		);
+		--list-marker-color: var(--list-marker-color-light);
+	}
+
+	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
+	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-dark
+		);
+		--list-marker-color: var(--list-marker-color-dark);
+	}
+}
+
+blockquote {
+	border-top: 0.1em solid var(--silver-blockquote-border-color);
+	border-right: 0.1em solid var(--silver-blockquote-border-color);
+	border-bottom: 0.1em solid var(--silver-blockquote-border-color);
+}
+
+pre {
+	border: 0.1em solid var(--silver-blockquote-border-color);
+}
+
+pre * {
+	color: var(--silver-foreground-color) !important;
+}
+
+table,
+table > thead > tr > th {
+	border: 0.1em solid var(--silver-blockquote-border-color);
+}
+
+table > tbody > tr,
+table > tbody > tr > td,
+table > tbody > tr + tr > td {
+	border: 0.05em solid var(--silver-blockquote-border-color);
+}
