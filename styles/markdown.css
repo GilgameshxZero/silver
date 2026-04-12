@@ -83,6 +83,7 @@ p {
 
 a {
 	color: var(--silver-textlink-foreground-color);
+	border-bottom: 0.1em solid var(--silver-textlink-foreground-color);
 	word-wrap: break-word;
 }
 
@@ -95,7 +96,10 @@ a:focus {
 pre {
 	max-width: 100%;
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.5
 		)
 		auto;
 
@@ -135,12 +139,23 @@ h2 {
 
 h1 {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1
 		)
 		0
-		calc((var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5);
+		calc(
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.5
+		);
 	padding-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.5
 	);
 	clear: both;
 
@@ -150,7 +165,10 @@ h1 {
 
 .silver-subtitled + h1 {
 	margin-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * -0.1
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * -0.1
 	);
 	padding-bottom: 0;
 
@@ -161,10 +179,16 @@ h1 {
 	--silver-paragraph-indent: 0ch;
 
 	margin-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.7
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.7
 	);
 	padding-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.4
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.4
 	);
 
 	border-bottom: 0.1em solid var(--silver-border-color);
@@ -173,12 +197,23 @@ h1 {
 
 h2 {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1
 		)
 		0
-		calc((var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5);
+		calc(
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.5
+		);
 	padding-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.2
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.2
 	);
 	width: 80%;
 	clear: both;
@@ -188,7 +223,10 @@ h2 {
 
 .silver-subtitled + h2 {
 	margin-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * -0.3
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * -0.3
 	);
 	padding-bottom: 0;
 
@@ -199,10 +237,16 @@ h2 {
 	--silver-paragraph-indent: 0ch;
 
 	margin-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.5
 	);
 	padding-bottom: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.3
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.3
 	);
 	width: 80%;
 	clear: both;
@@ -213,7 +257,10 @@ h2 {
 
 h3 {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.3
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.3
 		)
 		0;
 
@@ -222,7 +269,10 @@ h3 {
 
 h4 {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.3
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.3
 		)
 		0;
 
@@ -231,7 +281,10 @@ h4 {
 
 h5 {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.3
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.3
 		)
 		0;
 
@@ -240,7 +293,10 @@ h5 {
 
 h6 {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.3
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.3
 		)
 		0;
 
@@ -250,7 +306,10 @@ h6 {
 hr {
 	/* Customize by adjusting line-height and height to avoid page-break with 0-height element.*/
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1
 		)
 		auto;
 	height: 1em;
@@ -267,7 +326,10 @@ hr:after {
 
 .silver-revert + hr {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.5
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1.5
 		)
 		calc(25% / 2);
 	height: 0;
@@ -282,7 +344,10 @@ hr:after {
 
 table {
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1
 		)
 		auto;
 	max-width: 100%;
@@ -306,7 +371,10 @@ table tr {
 
 table td {
 	padding: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 1
 	);
 
 	border: none;
@@ -318,7 +386,10 @@ table > tbody > tr + tr > td {
 
 table th {
 	padding: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.5
 	);
 
 	border: none;
@@ -327,7 +398,10 @@ table th {
 
 table tr td {
 	padding: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.4
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.4
 	);
 }
 
@@ -343,11 +417,22 @@ blockquote {
 	--silver-paragraph-indent: 0;
 
 	padding: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.7
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.7
 		)
-		calc((var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.4);
+		calc(
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1.4
+		);
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.7
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 0.7
 		)
 		0;
 
@@ -370,7 +455,10 @@ video {
 	max-width: 100%;
 	max-height: 30em;
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.5
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1.5
 		)
 		auto;
 
@@ -418,10 +506,18 @@ video + br + em {
 	display: flow-root;
 	max-width: 75%;
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * -1.3
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * -1.3
 		)
 		auto
-		calc((var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1);
+		calc(
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1
+		);
 
 	text-align: center;
 	font-style: normal;
@@ -431,7 +527,10 @@ video + br + em {
 iframe {
 	display: block;
 	margin: calc(
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.5
+			(
+					var(--silver-paragraph-spacing) / 2 + 1em *
+						(var(--silver-line-height) - 1)
+				) * 1.5
 		)
 		auto;
 	max-width: 100%;
@@ -443,7 +542,9 @@ iframe {
 	position: relative;
 	width: 100%;
 	height: 0;
-	padding-top: calc(100% / 16 * 9 + (1em * (var(--silver-line-height) - 1)) * 3);
+	padding-top: calc(
+		100% / 16 * 9 + (1em * (var(--silver-line-height) - 1)) * 3
+	);
 }
 
 .silver-aspect > iframe {
@@ -469,13 +570,19 @@ audio {
 details {
 	margin: calc(var(--silver-paragraph-spacing) / 2) 0;
 	margin-left: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.4
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 1.4
 	);
 }
 
 summary {
 	margin-left: calc(
-		(var(--silver-paragraph-spacing) / -2 - 1em * (var(--silver-line-height) - 1)) * 1.4
+		(
+				var(--silver-paragraph-spacing) / -2 - 1em *
+					(var(--silver-line-height) - 1)
+			) * 1.4
 	);
 
 	cursor: pointer;
@@ -497,13 +604,22 @@ summary > p {
 aside {
 	width: calc(
 		50% - 0.5em -
-			(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 2.8
+			(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 2.8
 	);
 	padding: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.7
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.7
 	);
 	margin: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.7
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.7
 	);
 
 	background-color: var(--silver-blockquote-background-color);
@@ -512,7 +628,10 @@ aside {
 aside:nth-of-type(odd) {
 	margin-right: 0;
 	margin-left: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.4
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 1.4
 	);
 	float: right;
 	clear: right;
@@ -522,7 +641,10 @@ aside:nth-of-type(odd) {
 aside:nth-of-type(even) {
 	margin-left: 0;
 	margin-right: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.4
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 1.4
 	);
 	float: left;
 	clear: left;
@@ -534,10 +656,16 @@ aside.pullquote {
 
 	width: auto;
 	margin: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.7
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.7
 	);
 	padding: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 1.4
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 1.4
 	);
 	font-size: 1.5em;
 	text-align: center;
