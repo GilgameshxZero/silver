@@ -35,7 +35,10 @@ body[data-vscode-theme-name].vscode-dark {
 body[data-vscode-theme-name].vscode-light table th,
 body[data-vscode-theme-name].vscode-dark table th {
 	padding: calc(
-		(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)) * 0.5
+		(
+				var(--silver-paragraph-spacing) / 2 + 1em *
+					(var(--silver-line-height) - 1)
+			) * 0.5
 	);
 
 	border: none;
@@ -418,7 +421,9 @@ body[data-vscode-theme-name].vscode-light .hljs-strong {
 /* Special padding for pre elements based on --silver-paragraph-spacing and --silver-line-height. */
 pre:not(.hljs),
 pre.hljs code > div {
-	padding: calc(var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1));
+	padding: calc(
+		var(--silver-paragraph-spacing) / 2 + 1em * (var(--silver-line-height) - 1)
+	);
 }
 
 /* Task list CSS from VSCode extension. */

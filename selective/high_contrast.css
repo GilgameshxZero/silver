@@ -67,6 +67,14 @@ pre * {
 	color: var(--silver-foreground-color) !important;
 }
 
+code {
+	border: 0.05em solid var(--silver-blockquote-border-color);
+}
+
+pre > code {
+	border: none;
+}
+
 table,
 table > thead > tr > th {
 	border: 0.1em solid var(--silver-blockquote-border-color);
