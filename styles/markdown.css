@@ -362,10 +362,6 @@ table {
 	break-inside: avoid;
 }
 
-table thead {
-	font-size: 1.1em;
-}
-
 table tr {
 	border: none;
 }
