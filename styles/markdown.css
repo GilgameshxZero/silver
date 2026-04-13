@@ -114,6 +114,7 @@ code {
 	font-weight: 300;
 	line-height: inherit;
 	color: var(--silver-code-color);
+	background-color: var(--silver-pre-background-color);
 	word-wrap: break-word;
 }
 
@@ -159,8 +160,7 @@ h1 {
 	);
 	clear: both;
 
-	/* Color is overwritten in Code webview previews, so marked important here. */
-	border-bottom: 0.05em solid var(--silver-border-color) !important;
+	border-bottom: 0.05em solid var(--silver-border-color);
 	font-size: 1.7em;
 }
 
@@ -192,8 +192,7 @@ h1 {
 			) * 0.4
 	);
 
-	/* Color is overwritten in Code webview previews, so marked important here. */
-	border-bottom: 0.1em solid var(--silver-border-color) !important;
+	border-bottom: 0.1em solid var(--silver-border-color);
 	text-indent: var(--silver-paragraph-indent);
 }
 

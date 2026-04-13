@@ -1,4 +1,5 @@
 /* Removes most color and shading for a mostly black/white style. */
+/* TODO: This should be included in theme.css under a high contrast media query. */
 
 :root,
 :host {
@@ -15,42 +16,6 @@
 	--silver-code-color-dark: rgb(255, 255, 255);
 	--silver-blockquote-border-color-dark: rgb(255, 255, 255);
 	--list-marker-color-dark: rgb(255, 255, 255);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root,
-	:host {
-		--silver-blockquote-border-color: var(
-			--silver-blockquote-border-color-dark
-		);
-		--list-marker-color: var(--list-marker-color-dark);
-	}
-
-	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
-	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
-		--silver-blockquote-border-color: var(
-			--silver-blockquote-border-color-light
-		);
-		--list-marker-color: var(--list-marker-color-light);
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	:root,
-	:host {
-		--silver-blockquote-border-color: var(
-			--silver-blockquote-border-color-light
-		);
-		--list-marker-color: var(--list-marker-color-light);
-	}
-
-	:host:has(input.silver-theme-toggle[type="checkbox"]:checked),
-	:root:has(input.silver-theme-toggle[type="checkbox"]:checked) {
-		--silver-blockquote-border-color: var(
-			--silver-blockquote-border-color-dark
-		);
-		--list-marker-color: var(--list-marker-color-dark);
-	}
 }
 
 blockquote {

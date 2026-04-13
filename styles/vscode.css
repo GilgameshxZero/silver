@@ -6,6 +6,8 @@ Essentially, a merged form of the following, with various levels of selectivity:
 * https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css
 
 Some colors are custom-defined and overwritten.
+
+TODO: neither .vscode-light and .vscode-dark apply in high contrast themes, and mess up selectivity requirements on the styling.
 */
 
 /* These custom styles under `body[data-vscode-theme-name]` only apply in the VSCode web preview. They guarantee consistency of the Markdown web preview under different VSCode themes. */
@@ -31,9 +33,27 @@ body[data-vscode-theme-name].vscode-dark {
 	--silver-code-color: rgb(215, 186, 125);
 }
 
+body[data-vscode-theme-name].vscode-high-contrast {
+	--silver-border-color: var(--silver-foreground-color);
+	--silver-code-color: var(--silver-foreground-color);
+
+	--silver-textlink-foreground-color: var(--silver-foreground-color);
+	--silver-blockquote-background-color: var(--silver-background-color);
+	--silver-blockquote-border-color: var(--silver-foreground-color);
+	--silver-pre-background-color: var(--silver-background-color);
+
+	--list-marker-color: var(--silver-foreground-color);
+}
+
+body[data-vscode-theme-name] h1,
+body[data-vscode-theme-name] .silver-subtitled + h1 + p {
+	border-bottom-color: var(--silver-border-color);
+}
+
 /* TODO: More selector specificity needed? Seems fine under the default VSCode themes, but perhaps breaks under other themes. */
 body[data-vscode-theme-name].vscode-light table th,
-body[data-vscode-theme-name].vscode-dark table th {
+body[data-vscode-theme-name].vscode-dark table th,
+body[data-vscode-theme-name].vscode-high-contrast table th {
 	padding: calc(
 		(
 				var(--silver-paragraph-spacing) / 2 + 1em *
@@ -46,7 +66,8 @@ body[data-vscode-theme-name].vscode-dark table th {
 }
 
 body[data-vscode-theme-name].vscode-light a,
-body[data-vscode-theme-name].vscode-dark a {
+body[data-vscode-theme-name].vscode-dark,
+body[data-vscode-theme-name].vscode-high-contrast a {
 	outline-style: none;
 	box-shadow: none;
 	border-color: transparent;
@@ -433,4 +454,38 @@ pre.hljs code > div {
 .task-list-item-checkbox {
 	margin-left: -20px;
 	vertical-align: middle;
+}
+
+/* High contrast styling. */
+body[data-vscode-theme-name].vscode-high-contrast blockquote {
+	border-top: 0.1em solid var(--silver-blockquote-border-color);
+	border-right: 0.1em solid var(--silver-blockquote-border-color);
+	border-bottom: 0.1em solid var(--silver-blockquote-border-color);
+}
+
+body[data-vscode-theme-name].vscode-high-contrast pre {
+	border: 0.1em solid var(--silver-blockquote-border-color);
+}
+
+body[data-vscode-theme-name].vscode-high-contrast pre * {
+	color: var(--silver-foreground-color) !important;
+}
+
+body[data-vscode-theme-name].vscode-high-contrast code {
+	border: 0.05em solid var(--silver-blockquote-border-color);
+}
+
+body[data-vscode-theme-name].vscode-high-contrast pre > code {
+	border: none;
+}
+
+body[data-vscode-theme-name].vscode-high-contrast table,
+body[data-vscode-theme-name].vscode-high-contrast table > thead > tr > th {
+	border: 0.1em solid var(--silver-blockquote-border-color);
+}
+
+body[data-vscode-theme-name].vscode-high-contrast table > tbody > tr,
+body[data-vscode-theme-name].vscode-high-contrast table > tbody > tr > td,
+body[data-vscode-theme-name].vscode-high-contrast table > tbody > tr + tr > td {
+	border: 0.05em solid var(--silver-blockquote-border-color);
 }

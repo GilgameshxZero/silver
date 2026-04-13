@@ -1,6 +1,7 @@
 <!-- It is not necessary to directly import stylesheets in each Markdown file if `settings.json` points to the correct stylesheet. However, printing Bare HTML will not include the stylesheets in `settings.json`, so while printing, the HTML link is still needed. -->
 <link rel="stylesheet" href="silver.css">
 <!-- <link rel="stylesheet" href="selective/high_contrast.css"> -->
+<!-- <link rel="stylesheet" href="selective/theme.light.css"> -->
 
 <!-- Theme toggle allows for toggling of light/dark theme in browser only. This also affects the print theme in `silverine`. -->
 <input type="checkbox" class="silver-theme-toggle" enabled />

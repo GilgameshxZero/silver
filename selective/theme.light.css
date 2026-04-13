@@ -1,19 +1,29 @@
 /* The force CSS pages allow forcing light/dark theme regardless of preference when included after essay.css. Usually not used in VSCode webview preview, but in-browser with set light/dark theme. */
 
 :root,
-:host {
+:host,
+body[data-vscode-theme-name] {
 	--silver-foreground-color: var(--silver-foreground-color-light);
 	--silver-background-color: var(--silver-background-color-light);
-	--silver-textlink-foreground-color: var(--silver-textlink-foreground-color-light);
+	--silver-textlink-foreground-color: var(
+		--silver-textlink-foreground-color-light
+	);
 	--silver-pre-background-color: var(--silver-pre-background-color-light);
 	--silver-border-color: var(--silver-border-color-light);
 	--silver-code-color: var(--silver-code-color-light);
+	--silver-blockquote-border-color: var(--silver-blockquote-border-color-light);
+	--list-marker-color: var(--list-marker-color-light);
 }
 
+/* Need an additional layer of selectivity here if forcing opposite theme color inside webview preview. */
 .hljs-function,
 .hljs-params,
 .hljs-number,
-.hljs-class {
+.hljs-class,
+body[data-vscode-theme-name] .hljs-function,
+body[data-vscode-theme-name] .hljs-params,
+body[data-vscode-theme-name] .hljs-number,
+body[data-vscode-theme-name] .hljs-class {
 	color: inherit;
 }
 
@@ -21,19 +31,30 @@
 .hljs-quote,
 .hljs-number,
 .hljs-class,
-.hljs-variable {
+.hljs-variable,
+body[data-vscode-theme-name] .hljs-comment,
+body[data-vscode-theme-name] .hljs-quote,
+body[data-vscode-theme-name] .hljs-number,
+body[data-vscode-theme-name] .hljs-class,
+body[data-vscode-theme-name] .hljs-variable {
 	color: #008000;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-name,
-.hljs-tag {
+.hljs-tag,
+body[data-vscode-theme-name] .hljs-keyword,
+body[data-vscode-theme-name] .hljs-selector-tag,
+body[data-vscode-theme-name] .hljs-name,
+body[data-vscode-theme-name] .hljs-tag {
 	color: #00f;
 }
 
 .hljs-built_in,
-.hljs-builtin-name {
+.hljs-builtin-name,
+body[data-vscode-theme-name] .hljs-built_in,
+body[data-vscode-theme-name] .hljs-builtin-name {
 	color: #007acc;
 }
 
@@ -43,7 +64,14 @@
 .hljs-literal,
 .hljs-template-tag,
 .hljs-template-variable,
-.hljs-type {
+.hljs-type,
+body[data-vscode-theme-name] .hljs-string,
+body[data-vscode-theme-name] .hljs-section,
+body[data-vscode-theme-name] .hljs-attribute,
+body[data-vscode-theme-name] .hljs-literal,
+body[data-vscode-theme-name] .hljs-template-tag,
+body[data-vscode-theme-name] .hljs-template-variable,
+body[data-vscode-theme-name] .hljs-type {
 	color: #a31515;
 }
 
@@ -51,20 +79,32 @@
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-meta,
-.hljs-meta-keyword {
+.hljs-meta-keyword,
+body[data-vscode-theme-name] .hljs-subst,
+body[data-vscode-theme-name] .hljs-selector-attr,
+body[data-vscode-theme-name] .hljs-selector-pseudo,
+body[data-vscode-theme-name] .hljs-meta,
+body[data-vscode-theme-name] .hljs-meta-keyword {
 	color: #2b91af;
 }
+
 .hljs-title,
-.hljs-doctag {
+.hljs-doctag,
+body[data-vscode-theme-name] .hljs-title,
+body[data-vscode-theme-name] .hljs-doctag {
 	color: #808080;
 }
 
-.hljs-attr {
+.hljs-attr,
+body[data-vscode-theme-name] .hljs-attr {
 	color: #f00;
 }
 
 .hljs-symbol,
 .hljs-bullet,
-.hljs-link {
+.hljs-link,
+body[data-vscode-theme-name] .hljs-symbol,
+body[data-vscode-theme-name] .hljs-bullet,
+body[data-vscode-theme-name] .hljs-link {
 	color: #00b0e8;
 }

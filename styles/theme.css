@@ -5,8 +5,6 @@
 :host {
 	/* Traditionally shared variables between light/dark mode. */
 	--silver-blockquote-background-color: rgba(127, 127, 127, 0.1);
-	--silver-blockquote-border-color: rgba(0, 122, 204, 0.5);
-	--list-marker-color: rgb(0, 122, 204);
 
 	/* Base variables are conditionally set by themed variables. They are derived directly from the VSCode style pages. */
 	--silver-foreground-color-light: rgb(0, 0, 0);
@@ -15,6 +13,8 @@
 	--silver-pre-background-color-light: rgba(220, 220, 220, 0.4);
 	--silver-border-color-light: rgba(0, 0, 0, 0.18);
 	--silver-code-color-light: rgb(163, 21, 21);
+	--silver-blockquote-border-color-light: rgba(0, 122, 204, 0.5);
+	--list-marker-color-light: rgb(0, 122, 204);
 
 	--silver-foreground-color-dark: rgb(212, 212, 212);
 	--silver-background-color-dark: rgb(30, 30, 30);
@@ -22,6 +22,8 @@
 	--silver-pre-background-color-dark: rgba(10, 10, 10, 0.4);
 	--silver-border-color-dark: rgba(255, 255, 255, 0.18);
 	--silver-code-color-dark: rgb(215, 186, 125);
+	--silver-blockquote-border-color-dark: rgba(0, 122, 204, 0.5);
+	--list-marker-color-dark: rgb(0, 122, 204);
 
 	/* Overrides from VSCode default for the `silver` branding. */
 	--silver-foreground-color-dark: rgb(255, 255, 255);
@@ -45,6 +47,10 @@
 		--silver-pre-background-color: var(--silver-pre-background-color-light);
 		--silver-border-color: var(--silver-border-color-light);
 		--silver-code-color: var(--silver-code-color-light);
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-light
+		);
+		--list-marker-color: var(--list-marker-color-light);
 	}
 
 	.hljs-function,
@@ -118,6 +124,10 @@
 		--silver-pre-background-color: var(--silver-pre-background-color-dark);
 		--silver-border-color: var(--silver-border-color-dark);
 		--silver-code-color: var(--silver-code-color-dark);
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-dark
+		);
+		--list-marker-color: var(--list-marker-color-dark);
 	}
 
 	.hljs-keyword,
@@ -218,6 +228,7 @@ input.silver-theme-toggle[type="checkbox"] {
 
 	/* Hotfix for Firefox. */
 	-moz-appearance: initial;
+	appearance: initial;
 }
 
 input.silver-theme-toggle[type="checkbox"]::after {
@@ -287,6 +298,10 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 		--silver-pre-background-color: var(--silver-pre-background-color-light);
 		--silver-border-color: var(--silver-border-color-light);
 		--silver-code-color: var(--silver-code-color-light);
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-light
+		);
+		--list-marker-color: var(--list-marker-color-light);
 	}
 
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-function,
@@ -410,6 +425,10 @@ body[data-vscode-theme-name] input.silver-theme-toggle[type="checkbox"]::after {
 		--silver-pre-background-color: var(--silver-pre-background-color-dark);
 		--silver-border-color: var(--silver-border-color-dark);
 		--silver-code-color: var(--silver-code-color-dark);
+		--silver-blockquote-border-color: var(
+			--silver-blockquote-border-color-dark
+		);
+		--list-marker-color: var(--list-marker-color-dark);
 	}
 
 	:host:has(input.silver-theme-toggle[type="checkbox"]:checked) .hljs-keyword,
