@@ -83,8 +83,8 @@ p {
 
 a {
 	color: var(--silver-textlink-foreground-color);
-	border-bottom: 0.1em solid var(--silver-textlink-foreground-color);
 	word-wrap: break-word;
+	text-decoration: underline;
 }
 
 a:focus {
