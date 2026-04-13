@@ -120,6 +120,7 @@ code {
 
 pre code {
 	color: var(--silver-foreground-color);
+	background-color: initial;
 	-moz-tab-size: 2ch;
 	tab-size: 2ch;
 }
